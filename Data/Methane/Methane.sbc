@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!-- 
+  Methane (CH4)
+   - Blueprint for Organic -> Liquid Methane (20s/u @ 50KG->1L (0.9kg))
+  -->
+
+  <Blueprints>
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>OrganicToFuel</SubtypeId>
+      </Id>
+      <DisplayName>Methane (CH4)</DisplayName>
+      <Icon>Textures\GUI\Icons\ingot\gravel_ingot.dds</Icon>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="Organic" />
+      </Prerequisites>
+      <Result Amount="0.9" TypeId="Ingot" SubtypeId="Stone" />
+      <BaseProductionTimeInSeconds>20</BaseProductionTimeInSeconds>
+    </Blueprint>
+  </Blueprints>
+
+  <BlueprintClasses>
+    <Class>
+      <Id>
+        <TypeId>BlueprintClassDefinition</TypeId>
+        <SubtypeId>Fuel</SubtypeId>
+      </Id>
+      <DisplayName>Fuel</DisplayName>
+      <Icon>Textures\GUI\Icons\buttons\large_block.dds</Icon>
+      <HighlightIcon>Textures\GUI\Icons\buttons\large_block_highlight.dds</HighlightIcon>
+      <InputConstraintIcon>Textures\GUI\Icons\filter_ore.dds</InputConstraintIcon>
+      <OutputConstraintIcon>Textures\GUI\Icons\filter_ingot.dds</OutputConstraintIcon>
+    </Class>
+  </BlueprintClasses>
+
+  <BlueprintClassEntries>
+    <Entry Class="MethaneFuel" BlueprintSubtypeId="OrganicToFuel" />
+  </BlueprintClassEntries>
+
+  <!-- Methane CH4 -->
+  <GasProperties>
+    <Gas>
+      <Id>
+        <TypeId>MyObjectBuilder_GasProperties</TypeId>
+        <SubtypeId>MethaneGas</SubtypeId>
+      </Id>
+      <EnergyDensity>0.011</EnergyDensity>      <!--.010392 MWh/litres -->
+    </Gas>
+  </GasProperties>
+</Definitions>
